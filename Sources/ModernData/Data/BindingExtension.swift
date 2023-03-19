@@ -24,3 +24,14 @@ public extension Binding where Value == Double {
     }
     
 }
+
+@available(macOS 13.0, *)
+extension Binding {
+    static func ??(binding: Binding<Value?>, fallback: Value) -> Binding<Value> {
+        return Binding(get: {
+            binding.wrappedValue ?? fallback
+        }, set: {
+            binding.wrappedValue = $0
+        })
+    }
+}
