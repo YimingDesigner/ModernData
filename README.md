@@ -46,6 +46,13 @@ double.float()
 cgFloat.float()
 ```
 
+### Unwrap `Binding<Value?>` to `Binding<Value>`
+
+```swift
+@Binding var content: String?
+TextField("TextField", text: $content ?? "Default Content")
+```
+
 ## File
 
 ### `URL` Foundation
