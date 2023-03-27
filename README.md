@@ -88,6 +88,16 @@ extension URL {
 }
 ```
 
+### Temporary URL
+
+`TemporaryURL` will create an URL in system temporary folder by given parameters, whose actual file will be destroyed when no long being used.
+
+```swift
+@State var temporaryURL = TemporaryURL(name: "TemporaryName", extension: "png")
+
+temporaryURL.url
+```
+
 ### Audio Video Metadata
 
 ```swift
